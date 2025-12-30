@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef, useCallback } from "react";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate, useLocation, useNavigation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Shield, Loader2 } from "lucide-react";
@@ -57,8 +57,9 @@ export default function Login() {
       toast.success("Successfully logged in with Google!");
       
       // Navigate to home page - the auth context will check session on next render
+      
       const from = (location.state as any)?.from?.pathname || "/home";
-      window.location.href = from;
+      navigate(from, { replace: true });
     } catch (error: any) {
       console.error("Google sign-in error:", error);
       setAuthError(error.message || "Failed to sign in with Google");
@@ -66,7 +67,7 @@ export default function Login() {
     } finally {
       setLoading(false);
     }
-  }, [location.state]);
+  }, [location.state, navigate]);
 
   // Force light theme on login page
   useEffect(() => {
