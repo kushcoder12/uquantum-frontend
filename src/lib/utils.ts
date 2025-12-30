@@ -10,5 +10,5 @@ export function cn(...inputs: ClassValue[]) {
  * Falls back to http://localhost:8000 if not set (for local development)
  */
 export function getApiBaseUrl(): string {
-  return import.meta.env.VITE_API_BASE_URL || "http://localhost:8000";
+  return import.meta.env.VITE_API_BASE_URL || "https://k.initqube.com";
 }

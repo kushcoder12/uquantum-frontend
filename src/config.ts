@@ -1,2 +1,2 @@
-export const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://k.initqube.com';
+export const API_BASE_URL = import.meta.env.VITE_API_URL || 'https://k.initqube.com';
 
