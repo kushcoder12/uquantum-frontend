@@ -6,3 +6,4 @@ target/
 *.log
 .vscode/settings.json
 server/
+pnpm-lock.yaml
